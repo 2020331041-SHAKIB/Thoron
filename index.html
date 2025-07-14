@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ত্বরণ কোচিং সেন্টার</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+        <script
+            src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    </head>
+    <body class="bg-gray-50 text-gray-800">
+
+        <!-- 🌐 Responsive Navbar -->
+        <header class="bg-lime-950 text-white sticky top-0 z-50 shadow-md">
+            <div
+                class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+
+                <h1 class="text-center leading-tight">
+                    <span
+                        class="text-3xl sm:text-4xl font-extrabold text-yellow-300 block">ত্বরণ</span>
+                    <span class="text-lg sm:text-xl text-white">কোচিং
+                        সেন্টার</span>
+                </h1>
+                <!-- ☰ Toggle Button for Mobile -->
+                <button id="navToggle"
+                    class="sm:hidden text-3xl focus:outline-none">
+                    ☰
+                </button>
+
+                <!-- Navigation Menu -->
+                <nav id="navMenu"
+                    class="hidden sm:flex sm:items-center sm:space-x-8 sm:flex-row flex-col absolute sm:static top-full left-0 w-full sm:w-auto bg-lime-900 sm:bg-transparent text-white px-6 py-4 sm:p-0 shadow-md sm:shadow-none">
+                    <a href="#"
+                        class="block sm:inline-block py-2 sm:py-0 text-lg font-medium hover:text-yellow-300">Home</a>
+                    <a href="#about"
+                        class="block sm:inline-block py-2 sm:py-0 text-lg font-medium hover:text-yellow-300">About
+                        Us</a>
+                    <a href="#programs"
+                        class="block sm:inline-block py-2 sm:py-0 text-lg font-medium hover:text-yellow-300">Programs</a>
+                    <a href="#notice"
+                        class="block sm:inline-block py-2 sm:py-0 text-lg font-medium hover:text-yellow-300">Notice</a>
+                    <a href="login.html"
+                        class="block sm:inline-block py-2 sm:py-0 text-lg font-medium hover:text-yellow-300">Student
+                        Login</a>
+                    <a href="enroll.html"
+                        class="block sm:inline-block py-2 sm:py-0 mt-2 sm:mt-0 bg-yellow-400 text-black px-4 py-2 rounded font-semibold text-center hover:bg-yellow-300">Enroll</a>
+                </nav>
+            </div>
+        </header>
+
+        <script>
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('hidden');
+  });
+</script>
+
+        <!-- 🎠 Hero Carousel -->
+        <section
+            class="swiper mySwiper w-full h-[250px] sm:h-[400px] md:h-[550px] lg:h-[600px] xl:h-[650px]">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/img1.jpg"
+                        class="w-full h-full object-cover object-center"
+                        alt="Slide 1" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/img2.jpg"
+                        class="w-full h-full object-cover object-center"
+                        alt="Slide 2" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/img3.jpg"
+                        class="w-full h-full object-cover object-center"
+                        alt="Slide 3" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/img4.jpg"
+                        class="w-full h-full object-cover object-center"
+                        alt="Slide 4" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/img5.jpg"
+                        class="w-full h-full object-cover object-center"
+                        alt="Slide 5" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/img6.jpg"
+                        class="w-full h-full object-cover object-center"
+                        alt="Slide 6" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/img7.jpg"
+                        class="w-full h-full object-cover object-center"
+                        alt="Slide 7" />
+                </div>
+            </div>
+            <div class="swiper-button-next text-white"></div>
+            <div class="swiper-button-prev text-white"></div>
+            <div class="swiper-pagination"></div>
+        </section>
+
+        <script>
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: {
+        delay: 4000,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+
+        <!-- 📘 About Section -->
+        <section id="about" class="bg-white py-16 px-6">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2
+                    class="text-2xl sm:text-3xl font-bold text-red-700 mb-6">আমরা
+                    আলাদা কারণ...</h2>
+
+                <p
+                    class="text-sm sm:text-lg text-gray-800 leading-relaxed max-w-4xl mx-auto text-justify">
+                    ত্বরণ কোচিং সেন্টার নেত্রকোনার অন্যতম নির্ভরযোগ্য ও আধুনিক
+                    শিক্ষাপ্রতিষ্ঠান, যা ক্লাস ৫ থেকে ১০ পর্যন্ত শিক্ষার্থীদের
+                    জন্য উন্নত ও মানসম্পন্ন শিক্ষা প্রদান করে আসছে। আমাদের
+                    প্রতিষ্ঠানে রয়েছে <span
+                        class="font-semibold text-gray-800">অভিজ্ঞ ও দক্ষ
+                        শিক্ষকবৃন্দ</span> যারা প্রতিটি ছাত্রছাত্রীকে
+                    নির্ভুলভাবে গাইড করে। শিক্ষার্থীদের দুর্বল দিকগুলো চিহ্নিত
+                    করে তা উন্নয়নের জন্য আলাদা কৌশলে ক্লাস নেওয়া হয়।
+                    আমরা প্রতি সপ্তাহে <span
+                        class="font-semibold text-gray-800">সাপ্তাহিক
+                        পরীক্ষা</span> এবং প্রতি মাসে <span
+                        class="font-semibold text-gray-800">মাসিক মূল্যায়ন
+                        পরীক্ষা</span> পরিচালনা করি, যার মাধ্যমে ছাত্রদের
+                    অগ্রগতি নিয়মিতভাবে পর্যালোচনা করা হয়।
+                    পরীক্ষার ফলাফল অভিভাবকদের মোবাইলে এসএমএসের মাধ্যমে জানিয়ে
+                    দেওয়া হয়।
+                    <br /><br />
+                    আমাদের শ্রেণিকক্ষগুলো শান্তিপূর্ণ পরিবেশে পরিচালিত হয়,
+                    যেখানে শিক্ষকরা ছাত্রদের একাধিকবার বিষয়টি বুঝিয়ে দেন যতক্ষণ
+                    না সে পুরোপুরি আত্মস্থ করে।
+                </p>
+
+                <div
+                    class="mt-8 text-gray-700 text-sm sm:text-base leading-relaxed">
+                    <p><strong>📍 ঠিকানা:</strong> আরামবাগ মোড়, উপজেলা
+                        মুক্তিযুদ্ধা ভবন (২য় তলা), নেত্রকোনা।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 📚 Programs Section -->
+        <section id="programs" class="py-16 px-6 bg-gray-50">
+            <div class="max-w-7xl mx-auto text-center">
+                <!-- Colorful Decorative Title -->
+                <h2 class="text-3xl sm:text-4xl font-extrabold mb-12">
+                    <span class>আমাদের</span>
+                    <span class="text-rose-700">প্রোগ্রামসমূহ ....</span>
+                </h2>
+
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                    <!-- Class 5 -->
+                    <div
+                        class="bg-lime-100 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                        <h3
+                            class="text-xl font-semibold mb-3 text-lime-800">ক্লাস
+                            ৫</h3>
+                        <p class="text-lime-900 text-sm leading-relaxed">
+                            বাংলা, ইংরেজি ও গণিতের বেসিক শিক্ষা। ক্লাসে নিয়মিত
+                            মূল্যায়ন।
+                        </p>
+                    </div>
+
+                    <!-- Class 6 -->
+                    <div
+                        class="bg-yellow-100 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                        <h3
+                            class="text-xl font-semibold mb-3 text-yellow-800">ক্লাস
+                            ৬</h3>
+                        <p class="text-yellow-900 text-sm leading-relaxed">
+                            মৌলিক বিষয়বস্তুর পাশাপাশি পরীক্ষার প্রস্তুতি ও
+                            মনোযোগ বৃদ্ধি।
+                        </p>
+                    </div>
+
+                    <!-- Class 7 -->
+                    <div
+                        class="bg-cyan-100 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                        <h3
+                            class="text-xl font-semibold mb-3 text-cyan-800">ক্লাস
+                            ৭</h3>
+                        <p class="text-cyan-900 text-sm leading-relaxed">
+                            বিজ্ঞান, আইসিটি ও গণিতে উন্নত পাঠদান ও মক টেস্ট।
+                        </p>
+                    </div>
+
+                    <!-- Class 8 -->
+                    <div
+                        class="bg-pink-100 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                        <h3
+                            class="text-xl font-semibold mb-3 text-pink-800">ক্লাস
+                            ৮</h3>
+                        <p class="text-pink-900 text-sm leading-relaxed">
+                            শ্রেণিকক্ষ ভিত্তিক গভীর শিক্ষাদান এবং মাসিক
+                            মূল্যায়ন।
+                        </p>
+                    </div>
+
+                    <!-- Class 9 -->
+                    <div
+                        class="bg-indigo-100 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                        <h3
+                            class="text-xl font-semibold mb-3 text-indigo-800">ক্লাস
+                            ৯</h3>
+                        <p class="text-indigo-900 text-sm leading-relaxed">
+                            এসএসসি প্রস্তুতি, মডেল টেস্ট এবং বোর্ড পরীক্ষার
+                            ফরম্যাটে মূল্যায়ন।
+                        </p>
+                    </div>
+
+                    <!-- Class 10 -->
+                    <div
+                        class="bg-emerald-100 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                        <h3
+                            class="text-xl font-semibold mb-3 text-emerald-800">ক্লাস
+                            ১০</h3>
+                        <p class="text-emerald-900 text-sm leading-relaxed">
+                            বোর্ড পরীক্ষা প্রস্তুতি, ফলাফল উন্নয়ন ও স্বপ্ন
+                            পূরণের সহায়তা।
+                        </p>
+                    </div>
+
+                    <!-- Special SSC Preparation -->
+                    <div
+                        class="bg-amber-100 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                        <h3
+                            class="text-xl font-semibold mb-3 text-amber-800">বিশেষ
+                            এসএসসি প্রস্তুতি</h3>
+                        <p class="text-amber-900 text-sm leading-relaxed">
+                            সম্পূর্ণ এসএসসি পরীক্ষার জন্য বিশেষ ট্রেনিং ও মডেল
+                            টেস্ট সিরিজ।
+                        </p>
+                    </div>
+
+                    <!-- Scholarship Preparation (Class 5-8) -->
+                    <div
+                        class="bg-rose-100 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                        <h3
+                            class="text-xl font-semibold mb-3 text-rose-800">বৃত্তি
+                            প্রস্তুতি (ক্লাস ৫ & ৮)</h3>
+                        <p class="text-rose-900 text-sm leading-relaxed">
+                            ক্লাস ৫ এবং ক্লাস ৮ বৃত্তি পরীক্ষার জন্য বিশেষ
+                            প্রস্তুতি ও গাইডলাইন।
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🏆 Success -->
+
+        <section id="success" class="bg-white py-16 px-6">
+            <div class="max-w-5xl mx-auto text-center">
+                <!-- 🎯 Section Title -->
+                <h2
+                    class="text-3xl sm:text-4xl font-extrabold text-lime-600 mb-6 tracking-tight">
+                    আমাদের সাফল্য গাঁথা 🌟
+                </h2><br>
+
+                <!-- 💬 Description -->
+                <p
+                    class="text-gray-800 text-sm sm:text-base md:text-lg leading-relaxed mb-6">
+                    এসএসসি ২০২৫ পরীক্ষায় <span
+                        class="font-bold text-lime-700">ত্বরণ কোচিং
+                        সেন্টার</span> আবারও প্রমাণ করেছে —
+                    <span class="text-red-600 font-semibold">পরিকল্পনা, পরিশ্রম
+                        ও কঠোর অনুশীলনের ফল কখনো ব্যর্থ হয় না!</span>
+                </p>
+
+                <!-- 🎉 Achievement Highlights -->
+                <div class="bg-lime-50 rounded-lg shadow p-6 mb-8">
+                    <p
+                        class="text-base sm:text-lg md:text-xl text-gray-900 font-semibold leading-relaxed">
+                        💥 আমাদের শিক্ষার্থীরা অর্জন করেছে এক গর্বিত সাফল্য:
+                        <br />
+                        ✅ <span class="text-red-500 font-bold">১৩৫ জন</span>
+                        শিক্ষার্থী পেয়েছে <span
+                            class="text-amber-700 font-bold">Golden
+                            A+/A+</span><br />
+                        🥇 <span class="text-indigo-700 font-bold">নেত্রকোনা
+                            জেলায় ১ম স্থান</span> অর্জন করেছে ত্বরণ কোচিং
+                        সেন্টার!
+                    </p>
+                </div>
+
+                <!-- 🙏 Gratitude & Vision -->
+                <p
+                    class="text-gray-700 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto">
+                    এই অসাধারণ সাফল্যের জন্য আমরা <span
+                        class="text-emerald-700 font-semibold">আল্লাহর দরবারে
+                        কৃতজ্ঞ — আলহামদুলিল্লাহ!</span>
+                    <br />
+                    এই অর্জন আমাদের অঙ্গীকারকে আরও দৃঢ় করেছে:
+                    <br />
+                    <span class="italic text-gray-800">“প্রতিটি শিক্ষার্থীর জন্য
+                        নির্ভরযোগ্য পরিকল্পনা, গাইডলাইন, এবং মানসম্মত প্রস্তুতির
+                        প্রতিশ্রুতি।”</span>
+                </p>
+
+                <!-- 🌠 Closing -->
+                <p
+                    class="mt-8 text-lime-800 font-semibold text-base sm:text-lg">
+                    ✨ ত্বরণ কোচিং সেন্টার — শুধু কোচিং নয়, এটা একজন শিক্ষার্থীর
+                    <span class="underline">স্বপ্নপূরণের যাত্রা</span>।
+                </p>
+            </div>
+        </section>
+
+        <!-- 📢 Notices -->
+        <section id="notice" class="bg-blue-50 py-16 px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2
+                    class="text-3xl sm:text-4xl font-extrabold text-blue-800 text-center mb-12">
+                    নোটিশ বোর্ড 🗓️
+                </h2>
+
+                <div class="space-y-6">
+
+                    <!-- Notice Card with text only -->
+                    <div
+                        class="bg-white shadow-md rounded-lg p-6 border-l-4 border-blue-600">
+                        <p class="text-gray-800 text-base">
+                            📅 <span class="font-semibold">ভর্তি চলছে:</span>
+                            ক্লাস ৫-১০ (সেশন ২০২৫)
+                        </p>
+                    </div>
+
+                    <!-- Notice Card with PDF -->
+                    <div
+                        class="bg-white shadow-md rounded-lg p-6 border-l-4 border-green-500 flex flex-col sm:flex-row sm:justify-between sm:items-center">
+                        <p class="text-gray-800 text-base mb-3 sm:mb-0">
+                            📝 <span class="font-semibold">মাসিক মূল্যায়ন
+                                পরীক্ষা:</span> ২০ জুলাই, শনিবার
+                        </p>
+                        <a href="/pdfs/monthly_test_july.pdf" download
+                            class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-4 py-2 rounded transition whitespace-nowrap">
+                            📄 PDF ডাউনলোড করুন
+                        </a>
+                    </div>
+
+                    <!-- Notice Card with text only -->
+                    <div
+                        class="bg-white shadow-md rounded-lg p-6 border-l-4 border-amber-500">
+                        <p class="text-gray-800 text-base">
+                            📢 <span class="font-semibold">জুন মাসের পরীক্ষার
+                                ফলাফল:</span> প্রকাশিত হয়েছে
+                        </p>
+                    </div>
+
+                    <!-- Notice Card with PDF -->
+                    <div
+                        class="bg-white shadow-md rounded-lg p-6 border-l-4 border-indigo-600 flex flex-col sm:flex-row sm:justify-between sm:items-center">
+                        <p class="text-gray-800 text-base mb-3 sm:mb-0">
+                            📌 <span class="font-semibold">SSC ২০২৫ স্পেশাল
+                                ব্যাচ:</span> ভর্তি সীমিত
+                        </p>
+                        <a href="/pdfs/ssc_special_batch.pdf" download
+                            class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-4 py-2 rounded transition whitespace-nowrap">
+                            📄 PDF ডাউনলোড করুন
+                        </a>
+                    </div>
+
+                    <!-- Notice Card with PDF -->
+                    <div
+                        class="bg-white shadow-md rounded-lg p-6 border-l-4 border-pink-600 flex flex-col sm:flex-row sm:justify-between sm:items-center">
+                        <p class="text-gray-800 text-base mb-3 sm:mb-0">
+                            🎓 <span class="font-semibold">বৃত্তি পরীক্ষা
+                                প্রস্তুতি:</span> ক্লাস ৫,৮ এর জন্য
+                        </p>
+                        <a href="/pdfs/scholarship_prep.pdf" download
+                            class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-4 py-2 rounded transition whitespace-nowrap">
+                            📄 PDF ডাউনলোড করুন
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 📞 Footer -->
+        <footer class="bg-blue-950 text-white py-12 px-6">
+            <div
+                class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 text-center md:text-left">
+
+                <!-- Branding -->
+                <div class="space-y-3">
+                    <h2 class="text-2xl font-extrabold tracking-wide">ত্বরণ
+                        কোচিং সেন্টার</h2>
+                    <p class="text-gray-300 max-w-xs mx-auto md:mx-0">
+                        নেত্রকোনা, বাংলাদেশ<br />
+                        উন্নত শিক্ষা, নির্ভরযোগ্য কোচিং
+                    </p>
+                </div>
+
+                <!-- Contact Numbers -->
+                <div>
+                    <h3
+                        class="text-xl font-semibold mb-4 border-b border-gray-700 pb-2">যোগাযোগ
+                        নম্বর</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li>
+                            <span class="font-semibold">Shovo Sir:</span> <a
+                                href="tel:+880132525236885"
+                                class="hover:text-blue-500 transition">0132525236885</a>
+                        </li>
+                        <li>
+                            <span class="font-semibold">Hena Mam:</span> <a
+                                href="tel:+8801716411875"
+                                class="hover:text-blue-500 transition">01716411875</a>
+                        </li>
+                        <li>
+                            <span class="font-semibold">Nurul Sir:</span> <a
+                                href="tel:+8801714734060"
+                                class="hover:text-blue-500 transition">01714734060</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Address & Email -->
+                <div>
+                    <h3
+                        class="text-xl font-semibold mb-4 border-b border-gray-700 pb-2">ঠিকানা
+                        & ইমেইল</h3>
+                    <address
+                        class="not-italic text-gray-300 space-y-2 max-w-xs mx-auto md:mx-0">
+                        আরামবাগ মোড়, উপজেলা মুক্তিযুদ্ধা ভবন (২য় তলা),<br />
+                        নেত্রকোনা, বাংলাদেশ
+                        <br />
+                        <a href="mailto:smartcoaching@gmail.com"
+                            class="hover:text-blue-500 transition">thoronedu@gmail.com</a>
+                    </address>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h3
+                        class="text-xl font-semibold mb-4 border-b border-gray-700 pb-2">সোশ্যাল
+                        মিডিয়া</h3>
+                    <div class="flex justify-center md:justify-start space-x-6">
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/yourpage"
+                            target="_blank" rel="noopener noreferrer"
+                            aria-label="Facebook"
+                            class="text-white hover:text-blue-600 transition duration-300 ease-in-out text-4xl">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 512 512" fill="currentColor"
+                                class="w-10 h-10">
+                                <path
+                                    d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z" />
+                            </svg>
+                        </a>
+
+                        <!-- YouTube -->
+                        <a href="https://www.youtube.com/yourchannel"
+                            target="_blank" rel="noopener noreferrer"
+                            aria-label="YouTube"
+                            class="text-white hover:text-red-600 transition duration-300 ease-in-out text-4xl">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" class="w-10 h-10"
+                                viewBox="0 0 576 512">
+                                <path
+                                    d="M549.655 124.083c-6.281-23.718-24.788-42.292-48.422-48.602C458.917 64 288 64 288 64s-170.917 0-213.233 11.48c-23.634 6.31-42.141 24.884-48.422 48.602C16 167.41 16 256 16 256s0 88.59 10.345 131.917c6.281 23.718 24.788 42.292 48.422 48.602C117.083 448 288 448 288 448s170.917 0 213.233-11.48c23.634-6.31 42.141-24.884 48.422-48.602C560 344.59 560 256 560 256s0-88.59-10.345-131.917zM232 334.667V177.333L345.6 256 232 334.667z" />
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div
+                class="mt-10 border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
+                &copy; ২০২৫ ত্বরণ কোচিং সেন্টার | সর্বস্বত্ব সংরক্ষিত
+            </div>
+        </footer>
+
+    </body>
+</html>
