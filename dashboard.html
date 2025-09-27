@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শিক্ষার্থী ড্যাশবোর্ড - ত্বরণ কোচিং সেন্টার</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-lime-950 text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="text-center">
+                    <span class="text-2xl font-extrabold text-yellow-300 block">ত্বরণ</span>
+                    <span class="text-sm text-white">কোচিং সেন্টার</span>
+                </a>
+                <div class="hidden sm:block h-8 w-px bg-gray-300"></div>
+                <div class="hidden sm:block">
+                    <h1 class="text-lg font-semibold">শিক্ষার্থী ড্যাশবোর্ড</h1>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <div class="hidden md:block text-right">
+                    <p class="text-sm text-yellow-300" id="studentName">লোড হচ্ছে...</p>
+                    <p class="text-xs text-gray-300" id="studentClass">ক্লাস</p>
+                </div>
+                <div class="relative">
+                    <button id="profileDropdown" class="flex items-center space-x-2 text-white hover:text-yellow-300 transition">
+                        <i class="fas fa-user-circle text-2xl"></i>
+                        <i class="fas fa-chevron-down text-sm"></i>
+                    </button>
+                    <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-user mr-2"></i>প্রোফাইল
+                        </a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-cog mr-2"></i>সেটিংস
+                        </a>
+                        <div class="border-t border-gray-100"></div>
+                        <a href="#" id="logoutBtn" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100">
+                            <i class="fas fa-sign-out-alt mr-2"></i>লগআউট
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-6 py-8">
+        <!-- Welcome Section -->
+        <div class="bg-gradient-to-r from-lime-600 to-lime-700 rounded-lg p-6 text-white mb-8">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold mb-2">স্বাগতম, <span id="welcomeName">শিক্ষার্থী</span>!</h2>
+                    <p class="text-lime-100">আজকের তারিখ: <span id="currentDate"></span></p>
+                </div>
+                <div class="hidden md:block">
+                    <div class="text-right">
+                        <p class="text-3xl font-bold" id="studentIdDisplay">---</p>
+                        <p class="text-lime-200 text-sm">শিক্ষার্থী আইডি</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-blue-100 text-blue-600">
+                        <i class="fas fa-chart-line text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-2xl font-bold text-gray-900" id="averageMarks">--</p>
+                        <p class="text-gray-600 text-sm">গড় নম্বর</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-green-100 text-green-600">
+                        <i class="fas fa-trophy text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-2xl font-bold text-gray-900" id="currentGrade">--</p>
+                        <p class="text-gray-600 text-sm">বর্তমান গ্রেড</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-yellow-100 text-yellow-600">
+                        <i class="fas fa-calendar-check text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-2xl font-bold text-gray-900" id="attendanceRate">--%</p>
+                        <p class="text-gray-600 text-sm">উপস্থিতি</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-purple-100 text-purple-600">
+                        <i class="fas fa-book text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-2xl font-bold text-gray-900" id="totalExams">--</p>
+                        <p class="text-gray-600 text-sm">মোট পরীক্ষা</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Dashboard Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Recent Results -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-semibold text-gray-900">
+                            <i class="fas fa-clipboard-list mr-2 text-blue-600"></i>
+                            সাম্প্রতিক পরীক্ষার ফলাফল
+                        </h3>
+                        <button class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                            সব দেখুন <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+
+                    <div id="recentResults" class="space-y-4">
+                        <!-- Results will be populated by JavaScript -->
+                        <div class="flex items-center justify-center py-8">
+                            <i class="fas fa-spinner fa-spin text-gray-400 text-2xl"></i>
+                            <span class="ml-2 text-gray-500">লোড হচ্ছে...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance Chart -->
+                <div class="bg-white rounded-lg shadow-md p-6 mt-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-6">
+                        <i class="fas fa-chart-area mr-2 text-green-600"></i>
+                        পারফরম্যান্স চার্ট
+                    </h3>
+                    <div class="h-64">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <!-- Quick Actions -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">
+                        <i class="fas fa-bolt mr-2 text-yellow-600"></i>
+                        দ্রুত কাজ
+                    </h3>
+                    <div class="space-y-3">
+                        <button class="w-full text-left p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition">
+                            <i class="fas fa-download mr-2 text-blue-600"></i>
+                            ফলাফল ডাউনলোড
+                        </button>
+                        <button class="w-full text-left p-3 bg-green-50 hover:bg-green-100 rounded-lg transition">
+                            <i class="fas fa-calendar mr-2 text-green-600"></i>
+                            পরীক্ষার সময়সূচী
+                        </button>
+                        <button class="w-full text-left p-3 bg-purple-50 hover:bg-purple-100 rounded-lg transition">
+                            <i class="fas fa-book-open mr-2 text-purple-600"></i>
+                            পাঠ্যক্রম দেখুন
+                        </button>
+                        <button class="w-full text-left p-3 bg-orange-50 hover:bg-orange-100 rounded-lg transition">
+                            <i class="fas fa-phone mr-2 text-orange-600"></i>
+                            শিক্ষকের সাথে যোগাযোগ
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Recent Notices -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">
+                        <i class="fas fa-bullhorn mr-2 text-red-600"></i>
+                        সাম্প্রতিক নোটিশ
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="p-3 bg-yellow-50 border-l-4 border-yellow-400 rounded">
+                            <p class="text-sm text-gray-800 font-medium">মাসিক পরীক্ষা</p>
+                            <p class="text-xs text-gray-600 mt-1">২০ জুলাই, শনিবার</p>
+                        </div>
+                        <div class="p-3 bg-blue-50 border-l-4 border-blue-400 rounded">
+                            <p class="text-sm text-gray-800 font-medium">বৃত্তি পরীক্ষা প্রস্তুতি</p>
+                            <p class="text-xs text-gray-600 mt-1">ক্লাস ৫,৮</p>
+                        </div>
+                        <div class="p-3 bg-green-50 border-l-4 border-green-400 rounded">
+                            <p class="text-sm text-gray-800 font-medium">ভর্তি চলছে</p>
+                            <p class="text-xs text-gray-600 mt-1">সেশন ২০২৫</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Class Schedule -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">
+                        <i class="fas fa-clock mr-2 text-indigo-600"></i>
+                        আজকের ক্লাস
+                    </h3>
+                    <div class="space-y-3" id="todaySchedule">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
+                            <div>
+                                <p class="font-medium text-gray-900">গণিত</p>
+                                <p class="text-sm text-gray-600">সকাল ৯:০০ - ১০:০০</p>
+                            </div>
+                            <div class="text-green-600">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
+                            <div>
+                                <p class="font-medium text-gray-900">ইংরেজি</p>
+                                <p class="text-sm text-gray-600">সকাল ১০:১৫ - ১১:১৫</p>
+                            </div>
+                            <div class="text-yellow-600">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
